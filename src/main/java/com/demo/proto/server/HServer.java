@@ -61,6 +61,13 @@ public class HServer {
 
         @Override
         public void subscribeData(SRequest req, StreamObserver<SReply> responseObserver){
+            //TODO 1. 下发静态配置（启动Client）
+
+            //TODO 2. 分析器读取采集器数据
+
+            //TODO 3. 分析器分析数据后将采集结果给控制器
+
+            //TODO 4. 控制器进行调整参数？ 输出
             SReply reply = SReply.newBuilder().setMessage("Hello "+req.getName()).build();
             responseObserver.onNext(reply);
             responseObserver.onCompleted();

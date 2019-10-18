@@ -29,7 +29,7 @@ public class HClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
-    public  void greet(String name){
+    public  void pushData(String name){
         SRequest request = SRequest.newBuilder().setName(name).build();
         SReply response;
         try{
@@ -45,12 +45,17 @@ public class HClient {
     public static void main(String[] args) throws InterruptedException {
         HClient client = new HClient("127.0.0.1",50051);
         try{
+            //TODO 1. 收到静态配置
+
+            //TODO 2. 模拟采样数据
+
+            //TODO 3. 推送采样数据到采集器
             String user = "world";
             long start = System.currentTimeMillis();
-            client.greet(user);
-
+            client.pushData(user);
             long end = System.currentTimeMillis();
             logger.info("time: "+(end-start)*1.0/1000/60+" 分钟");
+            //TODO 4.
         }finally {
             client.shutdown();
         }
