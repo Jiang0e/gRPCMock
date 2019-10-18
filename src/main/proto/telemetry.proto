@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "telemetry";
+option java_outer_classname = "TelemetryProto";
+
+package helloworld;
+
+//实现订阅数据源的服务
+service Subscribe {
+    rpc SubscribeData (SRequest) returns (SReply) {
+    }
+}
+
+message SRequest {
+    string name = 1;
+    string condition = 2;
+}
+
+
+message SReply {
+    string message = 1;
+}
+
+message Telemetry {
+    //Telemetry消息结构定义。
+    string node_id_str = 1; //设备名称。
+    string subscription_id_str = 2; //订阅名称，静态配置订阅时的订阅名称，GPB编码时编码为2。
+    string sensor_path = 3; //订阅路径，GPB编码时编码为3。
+    uint64 collection_id = 4; //标识采样轮次，GPB编码时编码为4。
+    uint64 collection_start_time = 5; //标识采样轮次开始时间，GPB编码时编码为5。
+    uint64 msg_timestamp = 6; //生成本消息的时间戳，GPB编码时编码为6。
+    TelemetryGPBTable data_gpb = 7; //承载的数据由TelemetryGPBTable定义，GPB编码时编码为7。
+    uint64 collection_end_time = 8; //标识采样轮次结束时间，GPB编码时编码为8。
+    uint32 current_period = 9; //采样精度，单位是毫秒，GPB编码时编码为9。
+    string except_desc = 10; //异常描述信息，采样异常时用于上报异常信息，GPB编码时编码为10。
+    string product_name = 11; //产品名称。
+    enum Encoding {
+        Encoding_GPB = 0; //表示GPB数据编码格式。
+        Encoding_JSON = 1; //表示JSON数据编码格式。
+    };
+    Encoding encoding = 12; //数据编码格式。为GPB时，data_gpb字段有效，否则data_str字段有效。
+    string data_str = 14; // 数据编码非GPB时有效，否则为空。
+}
+message TelemetryGPBTable {
+    //TelemetryGPBTable消息结构定义。
+    repeated TelemetryRowGPB row = 1; //数组定义，标识数据是TelemetryRowGPB结构的重复，GPB编码时编码为1。
+}
+message TelemetryRowGPB {
+    uint64 timestamp = 1; //采样当前实例的时间戳，GPB编码时编码为1。
+    bytes content = 11; //承载的采样实例数据，GPB编码时编码为11，需要结合sensor_path字段，才可以判断此处会以哪个proto文件编码。
+}
