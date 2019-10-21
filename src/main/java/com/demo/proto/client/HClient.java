@@ -49,7 +49,7 @@ public class HClient {
         return response;
     }
 
-    //推送采样数据到采集器
+    //根据订阅配置，设置推送周期时间，推送采样数据到采集器
     public  void pushData(Telemetry telemetry,Config config){
         if(config != null) {
             Telemetry response;
