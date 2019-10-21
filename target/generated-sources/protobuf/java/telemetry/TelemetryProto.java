@@ -20,10 +20,10 @@ public final class TelemetryProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_helloworld_Config_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_helloworld_Result_descriptor;
+    internal_static_helloworld_Status_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_helloworld_Result_fieldAccessorTable;
+      internal_static_helloworld_Status_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_helloworld_Telemetry_descriptor;
   static final 
@@ -50,7 +50,7 @@ public final class TelemetryProto {
     java.lang.String[] descriptorData = {
       "\n\017telemetry.proto\022\nhelloworld\">\n\006Config\022" +
       "\016\n\006period\030\001 \001(\t\022\022\n\nfirst_time\030\002 \001(\t\022\020\n\010e" +
-      "nd_time\030\003 \001(\t\"\030\n\006Result\022\016\n\006result\030\001 \001(\t\"" +
+      "nd_time\030\003 \001(\t\"\030\n\006Status\022\016\n\006status\030\001 \001(\t\"" +
       "\245\003\n\tTelemetry\022\023\n\013node_id_str\030\001 \001(\t\022\033\n\023su" +
       "bscription_id_str\030\002 \001(\t\022\023\n\013sensor_path\030\003" +
       " \001(\t\022\025\n\rcollection_id\030\004 \001(\004\022\035\n\025collectio" +
@@ -64,11 +64,13 @@ public final class TelemetryProto {
       "PB\020\000\022\021\n\rEncoding_JSON\020\001\"=\n\021TelemetryGPBT" +
       "able\022(\n\003row\030\001 \003(\0132\033.helloworld.Telemetry" +
       "RowGPB\"5\n\017TelemetryRowGPB\022\021\n\ttimestamp\030\001" +
-      " \001(\004\022\017\n\007content\030\013 \001(\0142\207\001\n\tSubscribe\022?\n\rS" +
+      " \001(\004\022\017\n\007content\030\013 \001(\0142\300\001\n\tSubscribe\022?\n\rS" +
       "ubscribeData\022\025.helloworld.Telemetry\032\025.he" +
-      "lloworld.Telemetry\"\000\0229\n\rConfiguration\022\022." +
-      "helloworld.Config\032\022.helloworld.Result\"\000B" +
-      "\035\n\ttelemetryB\016TelemetryProtoP\001b\006proto3"
+      "lloworld.Telemetry\"\000\0227\n\010isConfig\022\025.hello" +
+      "world.Telemetry\032\022.helloworld.Status\"\000\0229\n" +
+      "\rConfiguration\022\022.helloworld.Status\032\022.hel" +
+      "loworld.Config\"\000B\035\n\ttelemetryB\016Telemetry" +
+      "ProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -88,12 +90,12 @@ public final class TelemetryProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_helloworld_Config_descriptor,
         new java.lang.String[] { "Period", "FirstTime", "EndTime", });
-    internal_static_helloworld_Result_descriptor =
+    internal_static_helloworld_Status_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_helloworld_Result_fieldAccessorTable = new
+    internal_static_helloworld_Status_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_helloworld_Result_descriptor,
-        new java.lang.String[] { "Result", });
+        internal_static_helloworld_Status_descriptor,
+        new java.lang.String[] { "Status", });
     internal_static_helloworld_Telemetry_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_helloworld_Telemetry_fieldAccessorTable = new

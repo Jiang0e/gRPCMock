@@ -59,30 +59,62 @@ public final class SubscribeGrpc {
      return getSubscribeDataMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<telemetry.Config,
-      telemetry.Result> getConfigurationMethod;
+  private static volatile io.grpc.MethodDescriptor<telemetry.Telemetry,
+      telemetry.Status> getIsConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "isConfig",
+      requestType = telemetry.Telemetry.class,
+      responseType = telemetry.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<telemetry.Telemetry,
+      telemetry.Status> getIsConfigMethod() {
+    io.grpc.MethodDescriptor<telemetry.Telemetry, telemetry.Status> getIsConfigMethod;
+    if ((getIsConfigMethod = SubscribeGrpc.getIsConfigMethod) == null) {
+      synchronized (SubscribeGrpc.class) {
+        if ((getIsConfigMethod = SubscribeGrpc.getIsConfigMethod) == null) {
+          SubscribeGrpc.getIsConfigMethod = getIsConfigMethod = 
+              io.grpc.MethodDescriptor.<telemetry.Telemetry, telemetry.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "helloworld.Subscribe", "isConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  telemetry.Telemetry.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  telemetry.Status.getDefaultInstance()))
+                  .setSchemaDescriptor(new SubscribeMethodDescriptorSupplier("isConfig"))
+                  .build();
+          }
+        }
+     }
+     return getIsConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<telemetry.Status,
+      telemetry.Config> getConfigurationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Configuration",
-      requestType = telemetry.Config.class,
-      responseType = telemetry.Result.class,
+      requestType = telemetry.Status.class,
+      responseType = telemetry.Config.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<telemetry.Config,
-      telemetry.Result> getConfigurationMethod() {
-    io.grpc.MethodDescriptor<telemetry.Config, telemetry.Result> getConfigurationMethod;
+  public static io.grpc.MethodDescriptor<telemetry.Status,
+      telemetry.Config> getConfigurationMethod() {
+    io.grpc.MethodDescriptor<telemetry.Status, telemetry.Config> getConfigurationMethod;
     if ((getConfigurationMethod = SubscribeGrpc.getConfigurationMethod) == null) {
       synchronized (SubscribeGrpc.class) {
         if ((getConfigurationMethod = SubscribeGrpc.getConfigurationMethod) == null) {
           SubscribeGrpc.getConfigurationMethod = getConfigurationMethod = 
-              io.grpc.MethodDescriptor.<telemetry.Config, telemetry.Result>newBuilder()
+              io.grpc.MethodDescriptor.<telemetry.Status, telemetry.Config>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "helloworld.Subscribe", "Configuration"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  telemetry.Config.getDefaultInstance()))
+                  telemetry.Status.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  telemetry.Result.getDefaultInstance()))
+                  telemetry.Config.getDefaultInstance()))
                   .setSchemaDescriptor(new SubscribeMethodDescriptorSupplier("Configuration"))
                   .build();
           }
@@ -130,11 +162,21 @@ public final class SubscribeGrpc {
 
     /**
      * <pre>
+     *反馈是否服务端下发了配置
+     * </pre>
+     */
+    public void isConfig(telemetry.Telemetry request,
+        io.grpc.stub.StreamObserver<telemetry.Status> responseObserver) {
+      asyncUnimplementedUnaryCall(getIsConfigMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      *启动配置静态订阅
      * </pre>
      */
-    public void configuration(telemetry.Config request,
-        io.grpc.stub.StreamObserver<telemetry.Result> responseObserver) {
+    public void configuration(telemetry.Status request,
+        io.grpc.stub.StreamObserver<telemetry.Config> responseObserver) {
       asyncUnimplementedUnaryCall(getConfigurationMethod(), responseObserver);
     }
 
@@ -148,11 +190,18 @@ public final class SubscribeGrpc {
                 telemetry.Telemetry>(
                   this, METHODID_SUBSCRIBE_DATA)))
           .addMethod(
+            getIsConfigMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                telemetry.Telemetry,
+                telemetry.Status>(
+                  this, METHODID_IS_CONFIG)))
+          .addMethod(
             getConfigurationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                telemetry.Config,
-                telemetry.Result>(
+                telemetry.Status,
+                telemetry.Config>(
                   this, METHODID_CONFIGURATION)))
           .build();
     }
@@ -189,11 +238,22 @@ public final class SubscribeGrpc {
 
     /**
      * <pre>
+     *反馈是否服务端下发了配置
+     * </pre>
+     */
+    public void isConfig(telemetry.Telemetry request,
+        io.grpc.stub.StreamObserver<telemetry.Status> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getIsConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      *启动配置静态订阅
      * </pre>
      */
-    public void configuration(telemetry.Config request,
-        io.grpc.stub.StreamObserver<telemetry.Result> responseObserver) {
+    public void configuration(telemetry.Status request,
+        io.grpc.stub.StreamObserver<telemetry.Config> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getConfigurationMethod(), getCallOptions()), request, responseObserver);
     }
@@ -229,10 +289,20 @@ public final class SubscribeGrpc {
 
     /**
      * <pre>
+     *反馈是否服务端下发了配置
+     * </pre>
+     */
+    public telemetry.Status isConfig(telemetry.Telemetry request) {
+      return blockingUnaryCall(
+          getChannel(), getIsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      *启动配置静态订阅
      * </pre>
      */
-    public telemetry.Result configuration(telemetry.Config request) {
+    public telemetry.Config configuration(telemetry.Status request) {
       return blockingUnaryCall(
           getChannel(), getConfigurationMethod(), getCallOptions(), request);
     }
@@ -269,18 +339,30 @@ public final class SubscribeGrpc {
 
     /**
      * <pre>
+     *反馈是否服务端下发了配置
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<telemetry.Status> isConfig(
+        telemetry.Telemetry request) {
+      return futureUnaryCall(
+          getChannel().newCall(getIsConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      *启动配置静态订阅
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<telemetry.Result> configuration(
-        telemetry.Config request) {
+    public com.google.common.util.concurrent.ListenableFuture<telemetry.Config> configuration(
+        telemetry.Status request) {
       return futureUnaryCall(
           getChannel().newCall(getConfigurationMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_SUBSCRIBE_DATA = 0;
-  private static final int METHODID_CONFIGURATION = 1;
+  private static final int METHODID_IS_CONFIG = 1;
+  private static final int METHODID_CONFIGURATION = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -303,9 +385,13 @@ public final class SubscribeGrpc {
           serviceImpl.subscribeData((telemetry.Telemetry) request,
               (io.grpc.stub.StreamObserver<telemetry.Telemetry>) responseObserver);
           break;
+        case METHODID_IS_CONFIG:
+          serviceImpl.isConfig((telemetry.Telemetry) request,
+              (io.grpc.stub.StreamObserver<telemetry.Status>) responseObserver);
+          break;
         case METHODID_CONFIGURATION:
-          serviceImpl.configuration((telemetry.Config) request,
-              (io.grpc.stub.StreamObserver<telemetry.Result>) responseObserver);
+          serviceImpl.configuration((telemetry.Status) request,
+              (io.grpc.stub.StreamObserver<telemetry.Config>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -369,6 +455,7 @@ public final class SubscribeGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SubscribeFileDescriptorSupplier())
               .addMethod(getSubscribeDataMethod())
+              .addMethod(getIsConfigMethod())
               .addMethod(getConfigurationMethod())
               .build();
         }

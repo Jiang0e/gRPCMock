@@ -1,38 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6698dacd-396a-4436-8363-0712c047a8fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/proto/server/MockDevice.java" afterDir="false" />
+    <list default="true" id="6698dacd-396a-4436-8363-0712c047a8fd" name="Default Changelist" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/proto/client/HClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/proto/client/HClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/proto/server/HServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/proto/server/HServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/proto/telemetry.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/telemetry.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/proto/server/Collector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/proto/server/Collector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SReply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SReplyOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SReplyOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SRequestOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/SRequestOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/Telemetry.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/Telemetry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryGPBTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryGPBTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryGPBTableOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryGPBTableOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryProto.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryProto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryRowGPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryRowGPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryRowGPBOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryRowGPBOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/any.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/any.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/compiler/plugin.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/compiler/plugin.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/descriptor.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/descriptor.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/duration.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/duration.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/empty.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/empty.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/field_mask.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/field_mask.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/source_context.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/source_context.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/struct.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/struct.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/timestamp.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/timestamp.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/type.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/type.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/wrappers.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/protoc-dependencies/350cdebf0a13f2e83d58e3ed889c3eb1/google/protobuf/wrappers.proto" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
+            <state>
               <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
             </state>
           </provider>
@@ -73,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/proto/telemetry.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="75">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -82,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/client/HClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+            <state relative-caret-position="150">
+              <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="38" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,19 +67,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/MockDevice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/HServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="73" column="106" selection-start-line="73" selection-start-column="106" selection-end-line="73" selection-end-column="106" />
+            <state relative-caret-position="289">
+              <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,19 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="212" column="37" selection-start-line="212" selection-start-column="37" selection-end-line="212" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -133,8 +90,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Analyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="139">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#260#276#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +103,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="159">
+              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +125,8 @@
     <findStrings>
       <find>GreeterImpl</find>
       <find>toString</find>
+      <find>subscribeData</find>
+      <find>blockingStub</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,10 +138,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/HServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/HClient.java" />
-        <option value="$PROJECT_DIR$/src/main/proto/telemetry.proto" />
         <option value="$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/Telemetry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/server/MockDevice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/server/Analyzer.java" />
+        <option value="$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java" />
+        <option value="$PROJECT_DIR$/src/main/proto/telemetry.proto" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/client/HClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/proto/server/HServer.java" />
       </list>
@@ -297,23 +265,6 @@
               <item name="gRPCMock" type="b2602c69:ProjectViewProjectNode" />
               <item name="gRPCMock" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
-              <item name="grpc-java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gRPCMock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gRPCMock" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="protobuf" type="462c0819:PsiDirectoryNode" />
-              <item name="grpc-java" type="462c0819:PsiDirectoryNode" />
-              <item name="telemetry" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gRPCMock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gRPCMock" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
               <item name="protoc-dependencies" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -401,7 +352,7 @@
       <workItem from="1571364508869" duration="4307000" />
       <workItem from="1571382458108" duration="3675000" />
       <workItem from="1571565180657" duration="6815000" />
-      <workItem from="1571621794241" duration="3530000" />
+      <workItem from="1571621794241" duration="16395000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1571380332367</created>
@@ -424,17 +375,59 @@
       <option name="project" value="LOCAL" />
       <updated>1571385598753</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="模拟好数据的">
+      <created>1571625405905</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571625405905</updated>
+    </task>
+    <task id="LOCAL-00005" summary="加上了分析器">
+      <created>1571628414303</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571628414303</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix">
+      <created>1571638309398</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571638309398</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix">
+      <created>1571641027639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571641027639</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix">
+      <created>1571641611821</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571641611821</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix">
+      <created>1571642921114</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571642921114</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19096000" />
+    <option name="totallyTimeSpent" value="31961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25869894" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19742814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -443,7 +436,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25204584" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -459,7 +452,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.21255673" />
+      <window_info anchor="right" id="Maven" order="5" visible="true" weight="0.21255673" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
@@ -510,7 +503,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+    <MESSAGE value="模拟好数据的" />
+    <MESSAGE value="加上了分析器" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-stub/1.14.0/grpc-stub-1.14.0.jar!/io/grpc/stub/StreamObserver.class">
@@ -522,29 +530,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
+        <state>
           <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Analyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="212" column="37" selection-start-line="212" selection-start-column="37" selection-end-line="212" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -555,20 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/Telemetry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/TelemetryGPBTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -576,17 +549,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-stub/1.14.0/grpc-stub-1.14.0.jar!/io/grpc/stub/ClientCalls.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Collector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/java/telemetry/Telemetry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/MockDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Analyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#260#276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/protobuf/grpc-java/telemetry/SubscribeGrpc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="392" column="22" selection-start-line="392" selection-start-column="22" selection-end-line="392" selection-end-column="22" />
+          <folding>
+            <element signature="e#3763#3802#0" expanded="true" />
+            <element signature="e#5389#5425#0" expanded="true" />
+            <element signature="e#6279#6280#0" expanded="true" />
+            <element signature="e#6322#6323#0" expanded="true" />
+            <element signature="e#8811#8812#0" expanded="true" />
+            <element signature="e#8839#8840#0" expanded="true" />
+            <element signature="e#10317#10318#0" expanded="true" />
+            <element signature="e#10345#10346#0" expanded="true" />
+            <element signature="e#11613#11614#0" expanded="true" />
+            <element signature="e#11641#11642#0" expanded="true" />
+            <element signature="e#15765#15766#0" expanded="true" />
+            <element signature="e#15807#15808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/proto/telemetry.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/client/HClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        <state relative-caret-position="150">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="38" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -595,18 +638,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/HServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="73" column="106" selection-start-line="73" selection-start-column="106" selection-end-line="73" selection-end-column="106" />
+        <state relative-caret-position="289">
+          <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/proto/server/MockDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
         </state>
       </provider>
     </entry>

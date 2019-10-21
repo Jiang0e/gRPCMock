@@ -6,6 +6,8 @@ import io.grpc.stub.StreamObserver;
 import telemetry.*;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -55,14 +57,25 @@ public class HServer {
     }
     // 实现 定义一个实现服务接口的类
     private class SubscribeImpl extends SubscribeGrpc.SubscribeImplBase {
+        @Override
+        public void isConfig(Telemetry request, StreamObserver<Status> responseObserver) {
+            //判断对应的设备有没有下发静态配置
+            //request.getNodeIdStr(); //对应的设备
+            //假设已下发
+            Status status = Status.newBuilder().setStatus("start").build();
+            responseObserver.onNext(status);
+            responseObserver.onCompleted();
+        }
 
         @Override
         public void configuration(Status status, StreamObserver<Config> responseObserver){
-            //TODO 1. 下发静态配置（启动Client）
-
-            Config result = Config.newBuilder().build();
+            //TODO 返回周期等配置信息
+            Config result = Config.newBuilder().setPeriod("10").build();
             responseObserver.onNext(result);
             responseObserver.onCompleted();
+            System.out.println("---------Configuration START----------\n" +
+                    result.toString()+
+                    "---------Configuration END----------\n");
         }
         @Override
         public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
@@ -72,10 +85,12 @@ public class HServer {
 
             responseObserver.onNext((Telemetry)analysedData.get("telemetry"));
             responseObserver.onCompleted();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("---------START----------\n" +
                     "Message from gRPC-Client:\n" + telemetry.toString()+
                     "----Analysed Result:" + analysedData.get("result")+
-                    "----\n-----------END----------");
+                    "----\n----Current Time:" + df.format(new Date())+
+                    "----\n-----------END----------\n");
         }
     }
 

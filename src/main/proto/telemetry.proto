@@ -10,6 +10,8 @@ package helloworld;
 service Subscribe {
     //实现订阅数据源的服务
     rpc SubscribeData (Telemetry) returns (Telemetry) {}
+    //反馈是否服务端下发了配置
+    rpc isConfig(Telemetry) returns (Status){}
     //启动配置静态订阅
     rpc Configuration (Status) returns (Config) {}
 }
