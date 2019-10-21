@@ -6,6 +6,7 @@ import io.grpc.stub.StreamObserver;
 import telemetry.*;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.logging.Logger;
 
 public class HServer {
@@ -64,14 +65,14 @@ public class HServer {
             //TODO 2. 分析器读取采集器数据
 
             //TODO 3. 分析器分析数据后将采集结果给控制器
-
+            Map<String, Object> analysedData = new Analyzer().analyse(telemetry);
             //TODO 4. 控制器进行调整参数？ 输出
-
-//            Telemetry telemetry = Telemetry.newBuilder().setNodeIdStr("Hello "+req.getNodeIdStr())
-//                    .build();
-            responseObserver.onNext(telemetry);
+            responseObserver.onNext((Telemetry)analysedData.get("telemetry"));
             responseObserver.onCompleted();
-            System.out.println("-------------------\nMessage from gRPC-Client:\n" + telemetry.toString()+"-------------------");
+            System.out.println("---------START----------\n" +
+                    "Message from gRPC-Client:\n" + telemetry.toString()+
+                    "----Analysed Result:" + analysedData.get("result")+
+                    "----\n-----------END----------");
         }
     }
 

@@ -1,5 +1,6 @@
 package com.demo.proto.client;
 
+import com.demo.proto.server.Analyzer;
 import com.demo.proto.server.MockDevice;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
@@ -33,6 +34,7 @@ public class HClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
+    //推送采样数据到采集器
     public  void pushData(Telemetry telemetry){
         Telemetry response;
         try{
@@ -53,10 +55,7 @@ public class HClient {
             //TODO 2. 模拟采样数据
             Telemetry telemetry = new MockDevice().mockData();
             //TODO 3. 推送采样数据到采集器
-            long start = System.currentTimeMillis();
             client.pushData(telemetry);
-            long end = System.currentTimeMillis();
-            logger.info("time: "+(end-start)*1.0/1000/60+" 分钟");
         }finally {
             client.shutdown();
         }
