@@ -1,17 +1,14 @@
 package com.demo.proto.client;
 
-import com.demo.proto.server.Analyzer;
 import com.demo.proto.server.MockDevice;
-import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
-import telemetry.*;
+import telemetry.Config;
+import telemetry.Status;
+import telemetry.SubscribeGrpc;
+import telemetry.Telemetry;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;

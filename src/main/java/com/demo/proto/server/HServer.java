@@ -3,7 +3,10 @@ package com.demo.proto.server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import telemetry.*;
+import telemetry.Config;
+import telemetry.Status;
+import telemetry.SubscribeGrpc;
+import telemetry.Telemetry;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
