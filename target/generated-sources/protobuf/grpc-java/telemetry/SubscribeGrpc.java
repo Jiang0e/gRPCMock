@@ -59,6 +59,38 @@ public final class SubscribeGrpc {
      return getSubscribeDataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<telemetry.Config,
+      telemetry.Result> getConfigurationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Configuration",
+      requestType = telemetry.Config.class,
+      responseType = telemetry.Result.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<telemetry.Config,
+      telemetry.Result> getConfigurationMethod() {
+    io.grpc.MethodDescriptor<telemetry.Config, telemetry.Result> getConfigurationMethod;
+    if ((getConfigurationMethod = SubscribeGrpc.getConfigurationMethod) == null) {
+      synchronized (SubscribeGrpc.class) {
+        if ((getConfigurationMethod = SubscribeGrpc.getConfigurationMethod) == null) {
+          SubscribeGrpc.getConfigurationMethod = getConfigurationMethod = 
+              io.grpc.MethodDescriptor.<telemetry.Config, telemetry.Result>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "helloworld.Subscribe", "Configuration"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  telemetry.Config.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  telemetry.Result.getDefaultInstance()))
+                  .setSchemaDescriptor(new SubscribeMethodDescriptorSupplier("Configuration"))
+                  .build();
+          }
+        }
+     }
+     return getConfigurationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -87,10 +119,23 @@ public final class SubscribeGrpc {
   public static abstract class SubscribeImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     *实现订阅数据源的服务
+     * </pre>
      */
     public void subscribeData(telemetry.Telemetry request,
         io.grpc.stub.StreamObserver<telemetry.Telemetry> responseObserver) {
       asyncUnimplementedUnaryCall(getSubscribeDataMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *启动配置静态订阅
+     * </pre>
+     */
+    public void configuration(telemetry.Config request,
+        io.grpc.stub.StreamObserver<telemetry.Result> responseObserver) {
+      asyncUnimplementedUnaryCall(getConfigurationMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -102,6 +147,13 @@ public final class SubscribeGrpc {
                 telemetry.Telemetry,
                 telemetry.Telemetry>(
                   this, METHODID_SUBSCRIBE_DATA)))
+          .addMethod(
+            getConfigurationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                telemetry.Config,
+                telemetry.Result>(
+                  this, METHODID_CONFIGURATION)))
           .build();
     }
   }
@@ -125,11 +177,25 @@ public final class SubscribeGrpc {
     }
 
     /**
+     * <pre>
+     *实现订阅数据源的服务
+     * </pre>
      */
     public void subscribeData(telemetry.Telemetry request,
         io.grpc.stub.StreamObserver<telemetry.Telemetry> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSubscribeDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *启动配置静态订阅
+     * </pre>
+     */
+    public void configuration(telemetry.Config request,
+        io.grpc.stub.StreamObserver<telemetry.Result> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getConfigurationMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -152,10 +218,23 @@ public final class SubscribeGrpc {
     }
 
     /**
+     * <pre>
+     *实现订阅数据源的服务
+     * </pre>
      */
     public telemetry.Telemetry subscribeData(telemetry.Telemetry request) {
       return blockingUnaryCall(
           getChannel(), getSubscribeDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *启动配置静态订阅
+     * </pre>
+     */
+    public telemetry.Result configuration(telemetry.Config request) {
+      return blockingUnaryCall(
+          getChannel(), getConfigurationMethod(), getCallOptions(), request);
     }
   }
 
@@ -178,15 +257,30 @@ public final class SubscribeGrpc {
     }
 
     /**
+     * <pre>
+     *实现订阅数据源的服务
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<telemetry.Telemetry> subscribeData(
         telemetry.Telemetry request) {
       return futureUnaryCall(
           getChannel().newCall(getSubscribeDataMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *启动配置静态订阅
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<telemetry.Result> configuration(
+        telemetry.Config request) {
+      return futureUnaryCall(
+          getChannel().newCall(getConfigurationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SUBSCRIBE_DATA = 0;
+  private static final int METHODID_CONFIGURATION = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -208,6 +302,10 @@ public final class SubscribeGrpc {
         case METHODID_SUBSCRIBE_DATA:
           serviceImpl.subscribeData((telemetry.Telemetry) request,
               (io.grpc.stub.StreamObserver<telemetry.Telemetry>) responseObserver);
+          break;
+        case METHODID_CONFIGURATION:
+          serviceImpl.configuration((telemetry.Config) request,
+              (io.grpc.stub.StreamObserver<telemetry.Result>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -271,6 +369,7 @@ public final class SubscribeGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SubscribeFileDescriptorSupplier())
               .addMethod(getSubscribeDataMethod())
+              .addMethod(getConfigurationMethod())
               .build();
         }
       }

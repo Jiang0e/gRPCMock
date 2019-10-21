@@ -57,23 +57,15 @@ public class HServer {
     private class SubscribeImpl extends SubscribeGrpc.SubscribeImplBase {
 
         @Override
-        public void configuration(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
+        public void configuration(Config config, StreamObserver<Result> responseObserver){
             //TODO 1. 下发静态配置（启动Client）
 
-            //TODO 3. 控制器进行调整参数？ 输出
-            responseObserver.onNext(telemetry);
-            responseObserver.onCompleted();
-            System.out.println("---------START----------\n" +
-                    "Configurate: " + telemetry.toString()+
-                    "----\n-----------END----------");
         }
         @Override
         public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
-            //TODO 1. 下发静态配置（启动Client）
-
-            //TODO 2. 分析器分析数据后将采集结果给控制器
+            //TODO 1. 分析器分析数据后将采集结果给控制器
             Map<String, Object> analysedData = new Analyzer().analyse(telemetry);
-            //TODO 3. 控制器进行调整参数？ 输出
+            //TODO 2. 控制器进行调整参数？ 输出
 
             responseObserver.onNext((Telemetry)analysedData.get("telemetry"));
             responseObserver.onCompleted();

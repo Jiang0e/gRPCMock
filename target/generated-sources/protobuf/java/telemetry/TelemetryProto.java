@@ -15,15 +15,15 @@ public final class TelemetryProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_helloworld_SRequest_descriptor;
+    internal_static_helloworld_Config_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_helloworld_SRequest_fieldAccessorTable;
+      internal_static_helloworld_Config_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_helloworld_SReply_descriptor;
+    internal_static_helloworld_Result_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_helloworld_SReply_fieldAccessorTable;
+      internal_static_helloworld_Result_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_helloworld_Telemetry_descriptor;
   static final 
@@ -48,26 +48,26 @@ public final class TelemetryProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017telemetry.proto\022\nhelloworld\"+\n\010SReques" +
-      "t\022\014\n\004name\030\001 \001(\t\022\021\n\tcondition\030\002 \001(\t\"\031\n\006SR" +
-      "eply\022\017\n\007message\030\001 \001(\t\"\245\003\n\tTelemetry\022\023\n\013n" +
-      "ode_id_str\030\001 \001(\t\022\033\n\023subscription_id_str\030" +
-      "\002 \001(\t\022\023\n\013sensor_path\030\003 \001(\t\022\025\n\rcollection" +
-      "_id\030\004 \001(\004\022\035\n\025collection_start_time\030\005 \001(\004" +
-      "\022\025\n\rmsg_timestamp\030\006 \001(\004\022/\n\010data_gpb\030\007 \001(" +
-      "\0132\035.helloworld.TelemetryGPBTable\022\033\n\023coll" +
-      "ection_end_time\030\010 \001(\004\022\026\n\016current_period\030" +
-      "\t \001(\r\022\023\n\013except_desc\030\n \001(\t\022\024\n\014product_na" +
-      "me\030\013 \001(\t\0220\n\010encoding\030\014 \001(\0162\036.helloworld." +
-      "Telemetry.Encoding\022\020\n\010data_str\030\016 \001(\t\"/\n\010" +
-      "Encoding\022\020\n\014Encoding_GPB\020\000\022\021\n\rEncoding_J" +
-      "SON\020\001\"=\n\021TelemetryGPBTable\022(\n\003row\030\001 \003(\0132" +
-      "\033.helloworld.TelemetryRowGPB\"5\n\017Telemetr" +
-      "yRowGPB\022\021\n\ttimestamp\030\001 \001(\004\022\017\n\007content\030\013 " +
-      "\001(\0142L\n\rSubscribeTest\022;\n\rSubscribeData\022\024." +
-      "helloworld.SRequest\032\022.helloworld.SReply\"" +
-      "\0002L\n\tSubscribe\022?\n\rSubscribeData\022\025.hellow" +
-      "orld.Telemetry\032\025.helloworld.Telemetry\"\000B" +
+      "\n\017telemetry.proto\022\nhelloworld\">\n\006Config\022" +
+      "\016\n\006period\030\001 \001(\t\022\022\n\nfirst_time\030\002 \001(\t\022\020\n\010e" +
+      "nd_time\030\003 \001(\t\"\030\n\006Result\022\016\n\006result\030\001 \001(\t\"" +
+      "\245\003\n\tTelemetry\022\023\n\013node_id_str\030\001 \001(\t\022\033\n\023su" +
+      "bscription_id_str\030\002 \001(\t\022\023\n\013sensor_path\030\003" +
+      " \001(\t\022\025\n\rcollection_id\030\004 \001(\004\022\035\n\025collectio" +
+      "n_start_time\030\005 \001(\004\022\025\n\rmsg_timestamp\030\006 \001(" +
+      "\004\022/\n\010data_gpb\030\007 \001(\0132\035.helloworld.Telemet" +
+      "ryGPBTable\022\033\n\023collection_end_time\030\010 \001(\004\022" +
+      "\026\n\016current_period\030\t \001(\r\022\023\n\013except_desc\030\n" +
+      " \001(\t\022\024\n\014product_name\030\013 \001(\t\0220\n\010encoding\030\014" +
+      " \001(\0162\036.helloworld.Telemetry.Encoding\022\020\n\010" +
+      "data_str\030\016 \001(\t\"/\n\010Encoding\022\020\n\014Encoding_G" +
+      "PB\020\000\022\021\n\rEncoding_JSON\020\001\"=\n\021TelemetryGPBT" +
+      "able\022(\n\003row\030\001 \003(\0132\033.helloworld.Telemetry" +
+      "RowGPB\"5\n\017TelemetryRowGPB\022\021\n\ttimestamp\030\001" +
+      " \001(\004\022\017\n\007content\030\013 \001(\0142\207\001\n\tSubscribe\022?\n\rS" +
+      "ubscribeData\022\025.helloworld.Telemetry\032\025.he" +
+      "lloworld.Telemetry\"\000\0229\n\rConfiguration\022\022." +
+      "helloworld.Config\032\022.helloworld.Result\"\000B" +
       "\035\n\ttelemetryB\016TelemetryProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -82,18 +82,18 @@ public final class TelemetryProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_helloworld_SRequest_descriptor =
+    internal_static_helloworld_Config_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_helloworld_SRequest_fieldAccessorTable = new
+    internal_static_helloworld_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_helloworld_SRequest_descriptor,
-        new java.lang.String[] { "Name", "Condition", });
-    internal_static_helloworld_SReply_descriptor =
+        internal_static_helloworld_Config_descriptor,
+        new java.lang.String[] { "Period", "FirstTime", "EndTime", });
+    internal_static_helloworld_Result_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_helloworld_SReply_fieldAccessorTable = new
+    internal_static_helloworld_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_helloworld_SReply_descriptor,
-        new java.lang.String[] { "Message", });
+        internal_static_helloworld_Result_descriptor,
+        new java.lang.String[] { "Result", });
     internal_static_helloworld_Telemetry_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_helloworld_Telemetry_fieldAccessorTable = new

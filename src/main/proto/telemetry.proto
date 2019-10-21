@@ -11,7 +11,15 @@ service Subscribe {
     //实现订阅数据源的服务
     rpc SubscribeData (Telemetry) returns (Telemetry) {}
     //启动配置静态订阅
-    rpc Configuration (Telemetry) returns (Telemetry) {}
+    rpc Configuration (Config) returns (Result) {}
+}
+message Config{
+    string period=1; // 采集周期
+    string first_time=2; //初次发送时间
+    string end_time=3; //结束发送时间
+}
+message Result{
+    string result = 1;
 }
 
 message Telemetry {
