@@ -29,7 +29,6 @@ private static final long serialVersionUID = 0L;
     encoding_ = 0;
     dataStr_ = "";
   }
-
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {

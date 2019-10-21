@@ -64,9 +64,11 @@ public final class TelemetryProto {
       "SON\020\001\"=\n\021TelemetryGPBTable\022(\n\003row\030\001 \003(\0132" +
       "\033.helloworld.TelemetryRowGPB\"5\n\017Telemetr" +
       "yRowGPB\022\021\n\ttimestamp\030\001 \001(\004\022\017\n\007content\030\013 " +
-      "\001(\0142H\n\tSubscribe\022;\n\rSubscribeData\022\024.hell" +
-      "oworld.SRequest\032\022.helloworld.SReply\"\000B\035\n" +
-      "\ttelemetryB\016TelemetryProtoP\001b\006proto3"
+      "\001(\0142L\n\rSubscribeTest\022;\n\rSubscribeData\022\024." +
+      "helloworld.SRequest\032\022.helloworld.SReply\"" +
+      "\0002L\n\tSubscribe\022?\n\rSubscribeData\022\025.hellow" +
+      "orld.Telemetry\032\025.helloworld.Telemetry\"\000B" +
+      "\035\n\ttelemetryB\016TelemetryProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

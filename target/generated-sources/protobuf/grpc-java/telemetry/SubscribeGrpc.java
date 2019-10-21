@@ -16,9 +16,6 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
- * <pre>
- *实现订阅数据源的服务
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.14.0)",
@@ -30,30 +27,30 @@ public final class SubscribeGrpc {
   public static final String SERVICE_NAME = "helloworld.Subscribe";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<telemetry.SRequest,
-      telemetry.SReply> getSubscribeDataMethod;
+  private static volatile io.grpc.MethodDescriptor<telemetry.Telemetry,
+      telemetry.Telemetry> getSubscribeDataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SubscribeData",
-      requestType = telemetry.SRequest.class,
-      responseType = telemetry.SReply.class,
+      requestType = telemetry.Telemetry.class,
+      responseType = telemetry.Telemetry.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<telemetry.SRequest,
-      telemetry.SReply> getSubscribeDataMethod() {
-    io.grpc.MethodDescriptor<telemetry.SRequest, telemetry.SReply> getSubscribeDataMethod;
+  public static io.grpc.MethodDescriptor<telemetry.Telemetry,
+      telemetry.Telemetry> getSubscribeDataMethod() {
+    io.grpc.MethodDescriptor<telemetry.Telemetry, telemetry.Telemetry> getSubscribeDataMethod;
     if ((getSubscribeDataMethod = SubscribeGrpc.getSubscribeDataMethod) == null) {
       synchronized (SubscribeGrpc.class) {
         if ((getSubscribeDataMethod = SubscribeGrpc.getSubscribeDataMethod) == null) {
           SubscribeGrpc.getSubscribeDataMethod = getSubscribeDataMethod = 
-              io.grpc.MethodDescriptor.<telemetry.SRequest, telemetry.SReply>newBuilder()
+              io.grpc.MethodDescriptor.<telemetry.Telemetry, telemetry.Telemetry>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "helloworld.Subscribe", "SubscribeData"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  telemetry.SRequest.getDefaultInstance()))
+                  telemetry.Telemetry.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  telemetry.SReply.getDefaultInstance()))
+                  telemetry.Telemetry.getDefaultInstance()))
                   .setSchemaDescriptor(new SubscribeMethodDescriptorSupplier("SubscribeData"))
                   .build();
           }
@@ -86,16 +83,13 @@ public final class SubscribeGrpc {
   }
 
   /**
-   * <pre>
-   *实现订阅数据源的服务
-   * </pre>
    */
   public static abstract class SubscribeImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void subscribeData(telemetry.SRequest request,
-        io.grpc.stub.StreamObserver<telemetry.SReply> responseObserver) {
+    public void subscribeData(telemetry.Telemetry request,
+        io.grpc.stub.StreamObserver<telemetry.Telemetry> responseObserver) {
       asyncUnimplementedUnaryCall(getSubscribeDataMethod(), responseObserver);
     }
 
@@ -105,17 +99,14 @@ public final class SubscribeGrpc {
             getSubscribeDataMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                telemetry.SRequest,
-                telemetry.SReply>(
+                telemetry.Telemetry,
+                telemetry.Telemetry>(
                   this, METHODID_SUBSCRIBE_DATA)))
           .build();
     }
   }
 
   /**
-   * <pre>
-   *实现订阅数据源的服务
-   * </pre>
    */
   public static final class SubscribeStub extends io.grpc.stub.AbstractStub<SubscribeStub> {
     private SubscribeStub(io.grpc.Channel channel) {
@@ -135,17 +126,14 @@ public final class SubscribeGrpc {
 
     /**
      */
-    public void subscribeData(telemetry.SRequest request,
-        io.grpc.stub.StreamObserver<telemetry.SReply> responseObserver) {
+    public void subscribeData(telemetry.Telemetry request,
+        io.grpc.stub.StreamObserver<telemetry.Telemetry> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSubscribeDataMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * <pre>
-   *实现订阅数据源的服务
-   * </pre>
    */
   public static final class SubscribeBlockingStub extends io.grpc.stub.AbstractStub<SubscribeBlockingStub> {
     private SubscribeBlockingStub(io.grpc.Channel channel) {
@@ -165,16 +153,13 @@ public final class SubscribeGrpc {
 
     /**
      */
-    public telemetry.SReply subscribeData(telemetry.SRequest request) {
+    public telemetry.Telemetry subscribeData(telemetry.Telemetry request) {
       return blockingUnaryCall(
           getChannel(), getSubscribeDataMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * <pre>
-   *实现订阅数据源的服务
-   * </pre>
    */
   public static final class SubscribeFutureStub extends io.grpc.stub.AbstractStub<SubscribeFutureStub> {
     private SubscribeFutureStub(io.grpc.Channel channel) {
@@ -194,8 +179,8 @@ public final class SubscribeGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<telemetry.SReply> subscribeData(
-        telemetry.SRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<telemetry.Telemetry> subscribeData(
+        telemetry.Telemetry request) {
       return futureUnaryCall(
           getChannel().newCall(getSubscribeDataMethod(), getCallOptions()), request);
     }
@@ -221,8 +206,8 @@ public final class SubscribeGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SUBSCRIBE_DATA:
-          serviceImpl.subscribeData((telemetry.SRequest) request,
-              (io.grpc.stub.StreamObserver<telemetry.SReply>) responseObserver);
+          serviceImpl.subscribeData((telemetry.Telemetry) request,
+              (io.grpc.stub.StreamObserver<telemetry.Telemetry>) responseObserver);
           break;
         default:
           throw new AssertionError();

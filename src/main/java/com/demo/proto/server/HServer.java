@@ -3,9 +3,7 @@ package com.demo.proto.server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import telemetry.SReply;
-import telemetry.SRequest;
-import telemetry.SubscribeGrpc;
+import telemetry.*;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -60,7 +58,7 @@ public class HServer {
     private class SubscribeImpl extends SubscribeGrpc.SubscribeImplBase {
 
         @Override
-        public void subscribeData(SRequest req, StreamObserver<SReply> responseObserver){
+        public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
             //TODO 1. 下发静态配置（启动Client）
 
             //TODO 2. 分析器读取采集器数据
@@ -68,10 +66,12 @@ public class HServer {
             //TODO 3. 分析器分析数据后将采集结果给控制器
 
             //TODO 4. 控制器进行调整参数？ 输出
-            SReply reply = SReply.newBuilder().setMessage("Hello "+req.getName()).build();
-            responseObserver.onNext(reply);
+
+//            Telemetry telemetry = Telemetry.newBuilder().setNodeIdStr("Hello "+req.getNodeIdStr())
+//                    .build();
+            responseObserver.onNext(telemetry);
             responseObserver.onCompleted();
-            System.out.println("Message from gRPC-Client:" + req.getName());
+            System.out.println("-------------------\nMessage from gRPC-Client:\n" + telemetry.toString()+"-------------------");
         }
     }
 
