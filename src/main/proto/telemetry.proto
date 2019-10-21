@@ -6,24 +6,12 @@ option java_outer_classname = "TelemetryProto";
 
 package helloworld;
 
-//实现订阅数据源的服务
-service SubscribeTest {
-    rpc SubscribeData (SRequest) returns (SReply) {
-    }
-}//实现订阅数据源的服务
+
 service Subscribe {
-    rpc SubscribeData (Telemetry) returns (Telemetry) {
-    }
-}
-
-message SRequest {
-    string name = 1;
-    string condition = 2;
-}
-
-
-message SReply {
-    string message = 1;
+    //实现订阅数据源的服务
+    rpc SubscribeData (Telemetry) returns (Telemetry) {}
+    //启动配置静态订阅
+    rpc Configuration (Telemetry) returns (Telemetry) {}
 }
 
 message Telemetry {
