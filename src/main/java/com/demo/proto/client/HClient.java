@@ -33,6 +33,20 @@ public class HClient {
     public void shutdown() throws InterruptedException {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
+    //收到配置信息
+    public  void pullConfig(Status status){
+        Config response=null;
+        try{
+            if("start".equals(status.getStatus())) {
+                response = blockingStub.configuration(status);
+            }
+        } catch (StatusRuntimeException e)
+        {
+            logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
+            return;
+        }
+        logger.info("Configuration from gRPC-Server: "+response.toString());
+    }
 
     //推送采样数据到采集器
     public  void pushData(Telemetry telemetry){
@@ -51,7 +65,8 @@ public class HClient {
         HClient client = new HClient("127.0.0.1",50051);
         try{
             //TODO 1. 收到静态配置
-
+            Status status = null;
+            client.pullConfig(status);
             //TODO 2. 模拟采样数据
             Telemetry telemetry = new MockDevice().mockData();
             //TODO 3. 推送采样数据到采集器

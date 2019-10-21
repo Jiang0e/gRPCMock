@@ -57,9 +57,12 @@ public class HServer {
     private class SubscribeImpl extends SubscribeGrpc.SubscribeImplBase {
 
         @Override
-        public void configuration(Config config, StreamObserver<Result> responseObserver){
+        public void configuration(Status status, StreamObserver<Config> responseObserver){
             //TODO 1. 下发静态配置（启动Client）
 
+            Config result = Config.newBuilder().build();
+            responseObserver.onNext(result);
+            responseObserver.onCompleted();
         }
         @Override
         public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
