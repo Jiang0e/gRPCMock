@@ -16,7 +16,7 @@ service Subscribe {
     rpc Configuration (Status) returns (Config) {}
 }
 message Config{
-    string period=1; // 采集周期
+    string period=1; // 采集周期，以天为单位
     string first_time=2; //初次发送时间
     string end_time=3; //结束发送时间
 }

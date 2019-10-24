@@ -73,7 +73,7 @@ public class HServer {
         @Override
         public void configuration(Status status, StreamObserver<Config> responseObserver){
             //TODO 返回周期等配置信息
-            Config result = Config.newBuilder().setPeriod("10").build();
+            Config result = Config.newBuilder().setPeriod("1").setFirstTime("2019-10-23 15:15:00").setEndTime("2019-10-30 15:15:00").build();
             responseObserver.onNext(result);
             responseObserver.onCompleted();
             System.out.println("---------Configuration START----------\n" +
@@ -96,5 +96,4 @@ public class HServer {
                     "----\n-----------END----------\n");
         }
     }
-
 }

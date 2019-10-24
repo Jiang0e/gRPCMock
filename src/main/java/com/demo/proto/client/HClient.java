@@ -9,6 +9,8 @@ import telemetry.Status;
 import telemetry.SubscribeGrpc;
 import telemetry.Telemetry;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,12 +54,23 @@ public class HClient {
     //根据订阅配置，设置推送周期时间，推送采样数据到采集器
     public  void pushData(Telemetry telemetry,Config config){
         if(config != null) {
-            Telemetry response;
+            Telemetry response =null;
             try {
-                response = blockingStub.subscribeData(telemetry);
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String first_time = config.getFirstTime();
+                String end_time = config.getEndTime();
+                String period = config.getPeriod();
+                long countDay = (df.parse(end_time).getTime() - df.parse(first_time).getTime())/(24 * 60 * 60 * 1000);
+                for(int i = 0;i<countDay;){
+                    response = blockingStub.subscribeData(telemetry);
+                    i+=Integer.valueOf(period);
+                    logger.info("Send times: " + i);
+                }
             } catch (StatusRuntimeException e) {
                 logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
                 return;
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
             logger.info("Message from gRPC-Server: \n" + response.toString());
         } else {
