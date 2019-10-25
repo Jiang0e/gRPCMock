@@ -40,7 +40,7 @@ public class HClient {
         try{
             status = blockingStub.isConfig(telemetry);
             if("start".equals(status.getStatus())) {
-                logger.info("gRPC-Server has distributed configuration.");
+                logger.info("服务端已下发配置");
                 response = blockingStub.configuration(status);
             }
         } catch (StatusRuntimeException e)
@@ -48,7 +48,7 @@ public class HClient {
             logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
             return null;
         }
-        logger.info("Configuration from gRPC-Server: "+response.toString());
+        logger.info("来自服务端的配置信息：\n"+response.toString());
         return response;
     }
 
@@ -70,7 +70,7 @@ public class HClient {
                 while (currentTime.compareTo(first_time)>=0 && currentTime.compareTo(end_time)<=0){
                     response = blockingStub.subscribeData(telemetry);
                     count++;
-                    logger.info("Send times: " + count +". Current Time: "+ df.format(new Date()));
+                    logger.info("发送次数: 第" + count +"次. 当前时间: "+ df.format(new Date()));
                     Thread.sleep((long) Integer.parseInt(period)*1000);
                     currentTime = df.format(new Date());
                 }
@@ -80,9 +80,9 @@ public class HClient {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            logger.info("Message from gRPC-Server: \n" + response.toString());
+            logger.info("服务端调整参数信息: \n" + response.toString());
         } else {
-            logger.info("There is no configuration");
+            logger.info("服务端未下发配置");
         }
     }
 

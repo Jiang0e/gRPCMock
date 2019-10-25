@@ -86,9 +86,9 @@ public class HServer {
             Config result = Config.newBuilder().setPeriod(String.valueOf(period)).setFirstTime(firstTime).setEndTime(endTime).build();
             responseObserver.onNext(result);
             responseObserver.onCompleted();
-            System.out.println("---------Configuration START----------\n" +
+            System.out.println("---------下发的配置信息 START----------\n" +
                     result.toString()+
-                    "---------Configuration END----------\n");
+                    "---------下发的配置信息 END----------\n");
         }
         @Override
         public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
@@ -99,9 +99,9 @@ public class HServer {
             responseObserver.onCompleted();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("---------START----------\n" +
-                    "Message from gRPC-Client:\n" + telemetry.toString()+
-                    "----Analysed Result:" + analysedData.get("result")+
-                    "----\n----Current Time:" + df.format(new Date())+
+                    "客户端推送的采样数据:\n" + telemetry.toString()+
+                    "----分析结果:" + analysedData.get("result")+
+                    "----\n----当前时间:" + df.format(new Date())+
                     "----\n-----------END----------\n");
         }
     }
