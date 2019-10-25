@@ -11,6 +11,7 @@ import telemetry.Telemetry;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +33,7 @@ public class HClient {
     public void shutdown() throws InterruptedException {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
-    //监听服务器是否下发配置，收到静态配置
+    //判断服务器是否下发配置，收到静态配置
     public  Config pullConfig(Telemetry telemetry){
         Status status = null;
         Config response=null;
@@ -51,8 +52,8 @@ public class HClient {
         return response;
     }
 
-    //根据订阅配置，设置推送周期时间，推送采样数据到采集器
-    public  void pushData(Telemetry telemetry,Config config){
+    //根据订阅配置，设置推送周期时间，推送采样数据到服务端的采集器
+    public  void pushData(Telemetry telemetry,Config config) throws InterruptedException {
         if(config != null) {
             Telemetry response =null;
             try {
@@ -60,11 +61,18 @@ public class HClient {
                 String first_time = config.getFirstTime();
                 String end_time = config.getEndTime();
                 String period = config.getPeriod();
-                long countDay = (df.parse(end_time).getTime() - df.parse(first_time).getTime())/(24 * 60 * 60 * 1000);
-                for(int i = 0;i<countDay;){
+                String currentTime = df.format(new Date());
+                while (currentTime.compareTo(first_time) < 0 ){
+                    Thread.sleep(df.parse(first_time).getTime() - df.parse(currentTime).getTime());
+                    currentTime = df.format(new Date());
+                }
+                int count = 0;
+                while (currentTime.compareTo(first_time)>=0 && currentTime.compareTo(end_time)<=0){
                     response = blockingStub.subscribeData(telemetry);
-                    i+=Integer.valueOf(period);
-                    logger.info("Send times: " + i);
+                    count++;
+                    logger.info("Send times: " + count +". Current Time: "+ df.format(new Date()));
+                    Thread.sleep((long) Integer.parseInt(period)*1000);
+                    currentTime = df.format(new Date());
                 }
             } catch (StatusRuntimeException e) {
                 logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
@@ -86,13 +94,13 @@ public class HClient {
     public static void main(String[] args) throws InterruptedException {
         HClient client = new HClient("127.0.0.1",50051);
         try{
-            //TODO 1. 模拟采样数据
+            //TODO 模拟采样数据
             Telemetry telemetry = new MockDevice().mockData();
-            //TODO 2. 监听服务器是否下发配置，收到静态配置
+            //TODO 2. 判断服务器是否下发配置，收到静态配置
             Config config = client.pullConfig(telemetry);
             //TODO 3. 更改配置
             telemetry = client.update(config,telemetry);
-            //TODO 4. 根据订阅配置，设置推送周期时间，推送采样数据到采集器
+            //TODO 4. 根据订阅配置，设置推送周期时间，推送采样数据到服务端的采集器
             client.pushData(telemetry,config);
         }finally {
             client.shutdown();

@@ -72,8 +72,18 @@ public class HServer {
 
         @Override
         public void configuration(Status status, StreamObserver<Config> responseObserver){
-            //TODO 返回周期等配置信息
-            Config result = Config.newBuilder().setPeriod("1").setFirstTime("2019-10-23 15:15:00").setEndTime("2019-10-30 15:15:00").build();
+            //TODO 1. 设置周期等配置信息
+            //模拟下时间，从当前开始加5个周期的时间，以便测试
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            int period = 2; //2秒
+            Date firstTimeDate = new Date();
+            firstTimeDate.setTime(firstTimeDate.getTime() + 1000);
+            String firstTime = df.format(new Date());
+            Date endTimeDate = new Date();
+            endTimeDate.setTime(endTimeDate.getTime() + 1000*period*5);
+            String endTime = df.format(endTimeDate);
+
+            Config result = Config.newBuilder().setPeriod(String.valueOf(period)).setFirstTime(firstTime).setEndTime(endTime).build();
             responseObserver.onNext(result);
             responseObserver.onCompleted();
             System.out.println("---------Configuration START----------\n" +
@@ -82,10 +92,9 @@ public class HServer {
         }
         @Override
         public void subscribeData(Telemetry telemetry, StreamObserver<Telemetry> responseObserver){
-            //TODO 1. 分析器分析数据后将采集结果给控制器
+            //TODO 5. 分析器分析数据后将采集结果给控制器
             Map<String, Object> analysedData = new Analyzer().analyse(telemetry);
-            //TODO 2. 控制器进行调整参数？ 输出
-
+            //TODO 6. 控制器进行调整参数输出,返回给客户端
             responseObserver.onNext((Telemetry)analysedData.get("telemetry"));
             responseObserver.onCompleted();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
